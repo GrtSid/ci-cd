@@ -1,0 +1,11 @@
+---
+- hosts: application_server
+  tasks:
+     - name: Git pull
+       git:
+         repo: 'https://{{user}}:{{pass}}@gitlab.com/aossie/social-street-smart.git'
+         dest: /home/usr/social-street-smart
+         version: master
+         clone: no
+         update: yes
+         force: yes
